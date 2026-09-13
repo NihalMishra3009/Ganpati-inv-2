@@ -14,12 +14,12 @@
   --text-muted: #c4d7ec;
   --text-gold: #ffe57f;
   --accent-sapphire: #195190;
-  
+
   /* Fonts */
   --font-heading: 'Yatra One', 'Playfair Display', 'Cinzel Decorative', cursive, serif;
   --font-body: 'Poppins', 'Mukta', 'Noto Sans Devanagari', sans-serif;
   --font-devanagari: 'Tiro Devanagari Marathi', 'Noto Sans Devanagari', serif;
-  
+
   --transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
@@ -64,12 +64,15 @@ body {
     transform: translateY(105vh) translateX(0) scale(0.6) rotate(0deg);
     opacity: 0;
   }
+
   20% {
     opacity: 0.8;
   }
+
   80% {
     opacity: 0.7;
   }
+
   100% {
     transform: translateY(-10vh) translateX(40px) scale(1.1) rotate(360deg);
     opacity: 0;
@@ -118,8 +121,15 @@ body {
 }
 
 @keyframes pulseGlow {
-  0% { transform: scale(1); filter: drop-shadow(0 0 2px #ffd700); }
-  100% { transform: scale(1.08); filter: drop-shadow(0 0 10px #ff9900); }
+  0% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 2px #ffd700);
+  }
+
+  100% {
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 10px #ff9900);
+  }
 }
 
 /* Language Switcher */
@@ -219,17 +229,39 @@ body {
 }
 
 /* Corner Motifs */
-.card-motif-tl, .card-motif-tr, .card-motif-bl, .card-motif-br {
+.card-motif-tl,
+.card-motif-tr,
+.card-motif-bl,
+.card-motif-br {
   position: absolute;
   width: 30px;
   height: 30px;
   pointer-events: none;
   opacity: 0.6;
 }
-.card-motif-tl { top: 8px; left: 8px; }
-.card-motif-tr { top: 8px; right: 8px; transform: rotate(90deg); }
-.card-motif-bl { bottom: 8px; left: 8px; transform: rotate(270deg); }
-.card-motif-br { bottom: 8px; right: 8px; transform: rotate(180deg); }
+
+.card-motif-tl {
+  top: 8px;
+  left: 8px;
+}
+
+.card-motif-tr {
+  top: 8px;
+  right: 8px;
+  transform: rotate(90deg);
+}
+
+.card-motif-bl {
+  bottom: 8px;
+  left: 8px;
+  transform: rotate(270deg);
+}
+
+.card-motif-br {
+  bottom: 8px;
+  right: 8px;
+  transform: rotate(180deg);
+}
 
 /* Hero Section & Divine Trio Composition */
 .hero-section {
@@ -353,7 +385,7 @@ body {
   font-family: var(--font-heading);
   font-size: 2.2rem;
   color: var(--gold-primary);
-  text-shadow: 0 2px 4px rgba(0,0,0,0.6), 0 0 20px rgba(245, 197, 24, 0.4);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6), 0 0 20px rgba(245, 197, 24, 0.4);
   margin-bottom: 10px;
   line-height: 1.3;
 }
@@ -374,14 +406,14 @@ body {
   padding: 10px 30px 10px 14px;
   border-radius: 60px;
   margin: 15px auto 25px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 20px rgba(245, 197, 24, 0.35);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(245, 197, 24, 0.35);
   backdrop-filter: blur(10px);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .host-invitation-card:hover {
   transform: translateY(-4px) scale(1.03);
-  box-shadow: 0 14px 35px rgba(0,0,0,0.6), 0 0 30px rgba(245, 197, 24, 0.55);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.6), 0 0 30px rgba(245, 197, 24, 0.55);
 }
 
 .host-avatar-frame {
@@ -443,7 +475,7 @@ body {
   color: var(--gold-primary);
   font-weight: 600;
   margin-bottom: 20px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .festival-dates-ribbon {
@@ -475,7 +507,7 @@ body {
   color: var(--gold-primary);
   text-align: center;
   margin-bottom: 24px;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -589,7 +621,8 @@ body {
   transform: translateX(4px);
 }
 
-.contact-card svg, .contact-card i {
+.contact-card svg,
+.contact-card i {
   font-size: 1.5rem;
   color: var(--gold-primary);
   flex-shrink: 0;
@@ -645,7 +678,7 @@ body {
   cursor: pointer;
   color: #381000;
   font-size: 1rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   transition: var(--transition);
 }
 
@@ -658,10 +691,13 @@ body {
 }
 
 @keyframes musicPulse {
-  0%, 100% {
+
+  0%,
+  100% {
     box-shadow: 0 0 10px rgba(245, 197, 24, 0.6);
     transform: scale(1);
   }
+
   50% {
     box-shadow: 0 0 20px rgba(245, 197, 24, 0.95);
     transform: scale(1.06);
@@ -697,54 +733,160 @@ body {
   transform: translateY(0);
 }
 
-/* Responsive adjustments */
+/* Responsive adjustments for all mobile screens */
 @media (max-width: 600px) {
-  .hero-title {
-    font-size: 1.7rem;
-  }
-  .container {
-    padding: 70px 14px 50px;
-  }
-  .glass-card {
-    padding: 22px 16px;
-  }
-  .divine-trio-container {
-    gap: 8px;
-  }
-  .gauri-flank {
-    width: 95px;
-  }
-  .gauri-img {
-    width: 90px;
-    height: 135px;
-  }
-  .deity-label {
-    font-size: 0.68rem;
-    padding: 2px 6px;
-  }
-  .hero-idol-container {
-    width: 170px;
-    height: 210px;
-  }
-  .aura-glow {
-    width: 160px;
-    height: 160px;
-  }
-  .prabhavali-halo {
-    width: 180px;
-    height: 180px;
-  }
-  .ganpati-idol {
-    width: 155px;
-    height: 195px;
-  }
   .top-navbar {
     padding: 10px 14px;
   }
+
+  .nav-brand {
+    font-size: 1.15rem;
+  }
+
+  .lang-btn {
+    padding: 4px 10px;
+    font-size: 0.78rem;
+  }
+
+  .container {
+    padding: 65px 12px 60px;
+  }
+
+  .hero-section {
+    padding-top: 10px;
+  }
+
+  .hero-title {
+    font-size: 1.65rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+    padding: 0 4px;
+  }
+
+  .glass-card {
+    padding: 20px 14px;
+    margin-bottom: 25px;
+  }
+
+  .divine-trio-container {
+    gap: 6px;
+    margin: 0 auto 20px;
+    max-width: 100%;
+  }
+
+  .gauri-flank {
+    width: 82px;
+  }
+
+  .gauri-img-frame {
+    padding: 2px;
+  }
+
+  .gauri-img {
+    width: 78px;
+    height: 120px;
+  }
+
+  .deity-label {
+    font-size: 0.62rem;
+    padding: 2px 5px;
+    margin-top: 6px;
+  }
+
+  .hero-idol-container {
+    width: 165px;
+    height: 200px;
+  }
+
+  .aura-glow {
+    width: 150px;
+    height: 150px;
+  }
+
+  .prabhavali-halo {
+    width: 175px;
+    height: 175px;
+  }
+
+  .ganpati-idol {
+    width: 145px;
+    height: 185px;
+    border-width: 2px;
+  }
+
+  .host-invitation-card {
+    gap: 12px;
+    padding: 8px 18px 8px 10px;
+    max-width: 95%;
+  }
+
+  .host-avatar-frame {
+    width: 70px;
+    height: 70px;
+  }
+
+  .host-intro-label {
+    font-size: 0.88rem;
+  }
+
+  .host-title-name {
+    font-size: 1.25rem;
+  }
+
+  .festival-dates-ribbon {
+    gap: 10px;
+  }
+
+  .date-pill {
+    padding: 8px 14px;
+    font-size: 0.85rem;
+    flex: 1 1 130px;
+  }
+
+  .event-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .contact-list {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
   .floating-music-player {
-    bottom: 14px;
-    right: 14px;
-    padding: 6px 12px 6px 10px;
+    bottom: 12px;
+    right: 12px;
+    padding: 5px 10px;
+    max-width: 220px;
+  }
+
+  .music-title {
+    font-size: 0.75rem;
+    max-width: 140px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .entry-card {
+    padding: 28px 18px;
+    border-radius: 18px;
+  }
+
+  .entry-om {
+    font-size: 2.8rem;
+  }
+
+  .entry-title {
+    font-size: 1.45rem;
+  }
+
+  .entry-open-btn {
+    font-size: 0.92rem;
+    padding: 12px 18px;
+    width: 100%;
+    justify-content: center;
   }
 }
 
@@ -785,8 +927,15 @@ body {
 }
 
 @keyframes entryPop {
-  0% { transform: scale(0.85); opacity: 0; }
-  100% { transform: scale(1); opacity: 1; }
+  0% {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .entry-om {

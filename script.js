@@ -239,18 +239,50 @@ function initMap() {
   marker.bindPopup(`<b>🪔 ${CONFIG.venueName}</b><br><small>${CONFIG.fullAddress}</small>`).openPopup();
 }
 
-// Intersection Observer for Smooth Scroll Reveal
+// Motion-Powered Smooth Scroll Reveal & Micro-Interactions
 function initScrollReveal() {
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.12 });
+  if (window.Motion && window.Motion.animate) {
+    const { animate, inView, spring } = window.Motion;
 
-  reveals.forEach(el => observer.observe(el));
+    // Animate reveals with smooth spring physics
+    inView('.reveal', ({ target }) => {
+      animate(
+        target,
+        { opacity: [0, 1], transform: ['translateY(35px) scale(0.98)', 'translateY(0px) scale(1)'] },
+        { duration: 0.8, easing: spring({ stiffness: 100, damping: 15 }) }
+      );
+    });
+
+    // Staggered cards entrance
+    inView('.event-grid', ({ target }) => {
+      const items = target.querySelectorAll('.event-item');
+      items.forEach((item, index) => {
+        animate(
+          item,
+          { opacity: [0, 1], transform: ['translateY(25px)', 'translateY(0px)'] },
+          { delay: index * 0.12, duration: 0.6 }
+        );
+      });
+    });
+
+    // Divine trio floating subtle animation
+    animate(
+      '.ganpati-idol',
+      { transform: ['scale(1)', 'scale(1.025)', 'scale(1)'] },
+      { duration: 4.5, repeat: Infinity, easing: 'ease-in-out' }
+    );
+  } else {
+    // Fallback Intersection Observer
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+  }
 }
 
 // Background Music Player Logic (HTML5 Audio with Loop & Autoplay Support)
