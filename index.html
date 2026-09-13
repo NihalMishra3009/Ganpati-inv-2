@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>॥ श्री गणेशाय नमः ॥ - Ganpati Utsav Invitation</title>
+  <meta name="description" content="Auspicious Ganpati Utsav Celebration & Invitation. Join us in seeking Lord Ganesha's blessings!">
+
+  <!-- Google Fonts: Devanagari, Display & Body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Mukta:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&family=Poppins:wght@300;400;600;700&family=Tiro+Devanagari+Marathi:ital@0;1&family=Yatra+One&display=swap" rel="stylesheet">
+
+  <!-- Leaflet.js CSS for Map -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css?v=2.0">
+</head>
+<body>
+
+  <!-- Floating Ambient Particles -->
+  <div class="particles-container" id="particlesContainer"></div>
+
+  <!-- Auspicious Instant Entry / Invitation Door Modal -->
+  <div class="invitation-door-overlay" id="entryModal">
+    <div class="entry-card">
+      <div class="entry-om">ॐ</div>
+      <p class="entry-shloka">॥ श्री गणेशाय नमः ॥</p>
+      <h2 class="entry-title">गणेशोत्सव निमंत्रण पत्रिका</h2>
+      <p class="entry-subtitle">बाप्पाच्या आगमनानिमित्त आपले सहर्ष स्वागत!</p>
+      <button class="entry-open-btn" id="entryOpenBtn">
+        <span class="btn-sparkle">🪔</span>
+        <span>निमंत्रण उघडा आणि संगीत ऐका (Open Invitation)</span>
+        <span class="btn-sparkle">🪔</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Fixed Top Navbar -->
+  <header class="top-navbar">
+    <div class="nav-brand">
+      <span class="om-symbol">ॐ</span>
+      <span>गणेशोत्सव</span>
+    </div>
+    <div class="lang-switcher">
+      <button class="lang-btn active" data-lang="mr">मराठी</button>
+      <button class="lang-btn" data-lang="hi">हिंदी</button>
+      <button class="lang-btn" data-lang="en">English</button>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="container">
+
+    <!-- Hero Section with Ganpati Bappa and Gauri Devi Centerpiece -->
+    <section class="hero-section reveal">
+      
+      <!-- Divine Trio: Gauri Devi (Left) - Ganpati Bappa (Center) - Gauri Devi (Right) -->
+      <div class="divine-trio-container">
+        <!-- Left Gauri Devi -->
+        <div class="gauri-flank left-flank">
+          <div class="gauri-img-frame">
+            <img src="assets/gauri_devi_custom.png" alt="ज्येष्ठा गौरी" class="gauri-img">
+          </div>
+          <span class="deity-label">॥ ज्येष्ठा गौरी ॥</span>
+        </div>
+
+        <!-- Center Ganpati Bappa -->
+        <div class="hero-idol-container">
+          <div class="aura-glow"></div>
+          
+          <!-- Prabhavali Arc / Halo SVG Line-art -->
+          <svg class="prabhavali-halo" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="100" r="92" stroke="var(--gold-primary)" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.85"/>
+            <circle cx="100" cy="100" r="84" stroke="var(--text-gold)" stroke-width="1" opacity="0.65"/>
+            <circle cx="100" cy="100" r="76" stroke="var(--gold-primary)" stroke-width="1.5" stroke-dasharray="2 8" opacity="0.9"/>
+            <g stroke="var(--text-gold)" stroke-width="1.2" opacity="0.75">
+              <line x1="100" y1="5" x2="100" y2="20" />
+              <line x1="100" y1="180" x2="100" y2="195" />
+              <line x1="5" y1="100" x2="20" y2="100" />
+              <line x1="180" y1="100" x2="195" y2="100" />
+              <line x1="33" y1="33" x2="44" y2="44" />
+              <line x1="156" y1="156" x2="167" y2="167" />
+              <line x1="33" y1="167" x2="44" y2="156" />
+              <line x1="156" y1="44" x2="167" y2="33" />
+            </g>
+          </svg>
+
+          <!-- Ganpati Photo Centerpiece -->
+          <img src="assets/ganpati_idol_clean.png" alt="गणपती बाप्पा" class="ganpati-idol">
+        </div>
+
+        <!-- Right Gauri Devi -->
+        <div class="gauri-flank right-flank">
+          <div class="gauri-img-frame">
+            <img src="assets/gauri_devi_custom.png" alt="कनिष्ठा गौरी" class="gauri-img">
+          </div>
+          <span class="deity-label">॥ कनिष्ठा गौरी ॥</span>
+        </div>
+      </div>
+
+      <p class="hero-shloka" data-i18n="shloka">॥ श्री गणेशाय नमः ॥</p>
+      <h1 class="hero-title" data-i18n="heroTitle">गणपती बाप्पा मोरया!</h1>
+      <p class="hero-subtitle" data-i18n="heroSubtitle">आमच्या घरच्या गणेशोत्सवाला सहपरिवार उपस्थित राहून बाप्पाचे व गौरी मातेचे आशीर्वाद घ्यावेत, ही नम्र विनंती.</p>
+      
+      <!-- Host Family Card with uploaded photo -->
+      <div class="host-invitation-card">
+        <div class="host-avatar-frame">
+          <img src="assets/host_family.png" alt="निमंत्रक" class="host-avatar-img">
+        </div>
+        <div class="host-card-text">
+          <span class="host-intro-label" data-i18n="hostPrefix">निमंत्रक:</span>
+          <strong class="host-title-name" data-config="hostName">Raut Family</strong>
+        </div>
+      </div>
+
+      <div class="festival-dates-ribbon">
+        <div class="date-pill">
+          <span data-i18n="aagmanLabel">🐘 आगमन</span>
+          <strong data-config="aagmanDate">14 September 2026</strong>
+        </div>
+        <div class="date-pill">
+          <span data-i18n="visarjanLabel">🌊 विसर्जन</span>
+          <strong data-config="visarjanDate">19 September 2026</strong>
+        </div>
+      </div>
+    </section>
+
+    <!-- Decorative Mandala Divider -->
+    <div class="mandala-divider">
+      <div class="line"></div>
+      <svg viewBox="0 0 24 24"><path d="M12,2L14.5,8.5L21,9.5L16,14L17.5,20.5L12,17L6.5,20.5L8,14L3,9.5L9.5,8.5L12,2Z"/></svg>
+      <div class="line"></div>
+    </div>
+
+    <!-- Event Details Section -->
+    <section class="glass-card reveal">
+      <!-- Corner Motifs -->
+      <svg class="card-motif-tl" viewBox="0 0 30 30" fill="var(--gold-primary)"><path d="M0,0 L30,0 L0,30 Z" opacity="0.3"/><path d="M0,0 L18,0 L0,18 Z"/></svg>
+      <svg class="card-motif-tr" viewBox="0 0 30 30" fill="var(--gold-primary)"><path d="M0,0 L30,0 L0,30 Z" opacity="0.3"/><path d="M0,0 L18,0 L0,18 Z"/></svg>
+      <svg class="card-motif-bl" viewBox="0 0 30 30" fill="var(--gold-primary)"><path d="M0,0 L30,0 L0,30 Z" opacity="0.3"/><path d="M0,0 L18,0 L0,18 Z"/></svg>
+      <svg class="card-motif-br" viewBox="0 0 30 30" fill="var(--gold-primary)"><path d="M0,0 L30,0 L0,30 Z" opacity="0.3"/><path d="M0,0 L18,0 L0,18 Z"/></svg>
+
+      <h2 class="section-heading">
+        <span>🪔</span>
+        <span data-i18n="eventDetailsHeading">उत्सव कार्यक्रम व वेळ</span>
+        <span>🪔</span>
+      </h2>
+
+      <div class="event-grid">
+        <!-- Date & Muhurat -->
+        <div class="event-item">
+          <span class="event-icon">📅</span>
+          <h3 data-i18n="dateMuhuratTitle">तारीख आणि शुभ मुहूर्त</h3>
+          <p><strong data-config="eventDate">14 September - 19 September 2026</strong></p>
+          <p class="sub-detail" data-config="muhuratTime">10:30 AM - 12:45 PM</p>
+        </div>
+
+        <!-- Venue Name -->
+        <div class="event-item">
+          <span class="event-icon">🏠</span>
+          <h3 data-i18n="venueTitle">उत्सव स्थळ</h3>
+          <p><strong data-config="venueName">Karan Apartment (Room No. 704)</strong></p>
+          <p class="sub-detail" data-config="fullAddress">Room No. 704, Plot No. 08, Karan Apartment, Sector 16, Roadpali, Kalamboli, Navi Mumbai - 410218</p>
+        </div>
+
+        <!-- Aarti Schedule -->
+        <div class="event-item">
+          <span class="event-icon">🎶</span>
+          <h3 data-i18n="aartiTitle">आरतीची वेळ</h3>
+          <p><span data-i18n="morningAartiLabel">सकाळची आरती:</span> <strong data-config="morningAarti">08:00 AM</strong></p>
+          <p class="sub-detail"><span data-i18n="eveningAartiLabel">संध्याकाळची आरती:</span> <strong data-config="eveningAarti">07:30 PM</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Decorative Mandala Divider -->
+    <div class="mandala-divider">
+      <div class="line"></div>
+      <svg viewBox="0 0 24 24"><path d="M12,2L14.5,8.5L21,9.5L16,14L17.5,20.5L12,17L6.5,20.5L8,14L3,9.5L9.5,8.5L12,2Z"/></svg>
+      <div class="line"></div>
+    </div>
+
+    <!-- Map & Directions Section -->
+    <section class="glass-card reveal">
+      <h2 class="section-heading">
+        <span>📍</span>
+        <span data-i18n="mapHeading">मार्ग आणि नकाशा</span>
+        <span>📍</span>
+      </h2>
+
+      <!-- Leaflet Interactive Map -->
+      <div id="map" class="map-container"></div>
+
+      <!-- Google Maps Directions Button -->
+      <a href="#" target="_blank" rel="noopener noreferrer" class="btn-directions" id="directionsBtn">
+        <span data-i18n="getDirectionsBtn">🗺️ गुगल मॅपवर दिशा मिळवा (Google Maps)</span>
+      </a>
+    </section>
+
+    <!-- Decorative Mandala Divider -->
+    <div class="mandala-divider">
+      <div class="line"></div>
+      <svg viewBox="0 0 24 24"><path d="M12,2L14.5,8.5L21,9.5L16,14L17.5,20.5L12,17L6.5,20.5L8,14L3,9.5L9.5,8.5L12,2Z"/></svg>
+      <div class="line"></div>
+    </div>
+
+    <!-- Contact & Address Section -->
+    <footer class="glass-card reveal">
+      <h2 class="section-heading">
+        <span>🪔</span>
+        <span data-i18n="contactHeading">संपर्क व पत्ता</span>
+        <span>🪔</span>
+      </h2>
+
+      <div class="contact-list">
+        <!-- Phone -->
+        <a href="tel:+919594131267" class="contact-card" id="phoneLink">
+          <i>📞</i>
+          <div class="contact-info">
+            <strong data-i18n="phoneLabel">फोन</strong>
+            <span data-config="phoneNumber">+91 95941 31267</span>
+          </div>
+        </a>
+
+        <!-- WhatsApp -->
+        <a href="https://wa.me/919594131267" target="_blank" rel="noopener noreferrer" class="contact-card" id="waLink">
+          <i>💬</i>
+          <div class="contact-info">
+            <strong data-i18n="whatsappLabel">व्हॉट्सॲप</strong>
+            <span data-config="hostName">Raut Family</span>
+          </div>
+        </a>
+
+        <!-- Address -->
+        <div class="contact-card" style="grid-column: 1 / -1;">
+          <i>📍</i>
+          <div class="contact-info">
+            <strong data-i18n="addressLabel">पत्ता</strong>
+            <span data-config="fullAddress">Room No. 704, Plot No. 08, Karan Apartment, Sector 16, Roadpali, Kalamboli, Navi Mumbai - 410218</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Closing Blessing Line -->
+      <p class="closing-blessing" data-i18n="closingBlessing">
+        🙏 आपली उपस्थिती आमच्यासाठी आनंदाची गोष्ट असेल! 🙏
+      </p>
+    </footer>
+
+  </main>
+
+  <!-- Floating Devotional Background Music Widget -->
+  <div class="floating-music-player">
+    <button class="music-btn" id="musicPlayBtn" title="Play/Pause Music" aria-label="Play/Pause Music">▶</button>
+    <div class="music-track-info">
+      <span class="music-title" id="musicTrackTitle">Sur Niragas Ho (सुर निरागस हो)</span>
+      <span class="music-status" id="musicStatus" data-i18n="musicPaused">संगीत थांबवले आहे</span>
+    </div>
+  </div>
+
+  <!-- HTML5 Background Audio Element -->
+  <audio id="bgAudio" loop preload="auto">
+    <source src="Sur%20Niragas%20Ho%20-%20Full%20Audio%20%20Katyar%20Kaljat%20Ghusli%20%20Shankar%20Mahadevan%20%26%20Aanandi%20Joshi.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Leaflet.js JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <!-- Application Script -->
+  <script src="script.js?v=4.0"></script>
+</body>
+</html>
